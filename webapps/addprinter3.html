@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/custom.css">
+        <title>Add a Printer</title>
+    </head>
+    <body>
+
+<!--Nav-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="../"><img src="images/logo.svg" height="25"></a>
+    <div class="navbar-header">     
+        <a class="navbar-brand" href="#"> Printer Reservation System </a>  
+    </div>  
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#options"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="options">
+  
+          <!-- Links -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link " href="javascript:close_window();">Close</a>
+            </li>  
+          </ul>
+              <!-- Links -->    
+      </div>
+      <!-- Collapsible content -->
+  </nav>
+
+<div class="container container-fluid">               
+    <div style=" margin-top:50px" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="card" >
+            <div class="card-header">
+                <div class="card-title">Add a printer</div>
+            </div>  
+            <div class="card-body" >
+                <form method="post">
+                    <form  class="form-horizontal" method="post" action="controllers/addprinter.php">
+                        <div class="form-group required">
+                            <label class="control-label col-md-8  requiredField">IP Address<span class="asteriskField">*</span> </label>
+                            <div class="controls col-md-8 ">
+                                <input class="input-md  textinput textInput form-control" id="address" maxlength="30" name="address" placeholder="192.xxx.xxx.xxx" style="margin-bottom: 10px" type="text" onkeyup="showHint(this.value)"/>
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label class="control-label col-md-8  requiredField">Model (detected)</label>
+                            <div class="controls col-md-8 ">
+                                <!--<input class="input-md text form-control" id="model" name="model" placeholder="Lexmark CX9XX" style="margin-bottom: 10px" type="text" />-->
+                                <p><span id="txtHint"></span></p>
+                                <button class='btn btn-default' id='getmodel' style = 'display:none'>Discover Model</button>
+                            </div>     
+                        </div>
+                        <div class="form-group">
+                            <div class="controls col-md-12">
+                                <input type="hidden" name="legacy" value="0" />
+                                <input type="checkbox" name="legacy" value="1" />
+                                <label class="control-label  requiredField">Legacy </label>
+                                
+                                <em>(released prior to 2016)</em>
+                            </div>     
+                        </div>
+                        <div class="form-group"> 
+                            <div class="controls col-md-8 ">
+                                <input type="button" name="Submit" value="Submit" class="btn btn-primary btn btn-info" id="submit-id-signup" />
+                            </div>
+                        </div> 
+                    </form>
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+
+    </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+function close_window() {
+  if (confirm("Close Tab?")) {
+    close();
+  }
+}
+</script>
+<script src="js/scripts.js"></script>
+</html>

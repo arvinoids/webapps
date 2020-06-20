@@ -1,0 +1,5 @@
+<tr id='{{address}}'>
+    <td class='apps'>{{apps}}</td>
+    <td><a href='https://{{address}}/lmc' class='model' target='_BLANK'>{{address}}</a></td>
+    <td class='status'>{{status}}</td>
+</tr>

@@ -1,0 +1,64 @@
+
+<div class="pb-3">
+<h5>Profile</h5>
+<table class="pb-5">
+    <tbody>
+        <tr><td class="e">Installation Profile </td><td class="v">{{ip}}</td></tr>
+        <tr><td class="e">Status</td><td class="v">{{status}}</td></tr>
+        <tr><td class="e">Account</td><td class="v">{{account}}</td></tr>
+        <tr><td class="e">Project</td><td class="v">{{project}}</td></tr>
+  </tbody>
+</table> 
+</div>
+
+<div class="pb-3"> 
+<h5>Contacts</h5>
+<table >
+    <tbody>
+
+        <tr><td class="e">App Owner (Customer)</td><td class="v">{{app_owner}}</td></tr>
+        <tr><td class="e">Email</td><td class="v">{{email}} </td></tr>
+        <tr><td class="e">Phone</td><td class="v">{{phone}}</td></tr>
+        <tr><td class="e">TPM</td><td class="v">{{project_manager}}</td></tr>
+        <tr><td class="e">Local PS</td><td class="v">{{ps}}</td></tr>
+        <tr><td class="e">Installer</td><td class="v">{{installer}}</td></tr>
+        
+
+
+    </tbody>
+  </table>  
+</div>
+
+<div class="pb-3">
+<h5>Technical Details</h5>
+<table>
+    <tbody>
+        <tr><td class="e">Solutions</td><td class="v">{{solutions}}</td></tr>
+        <tr><td class="e">Platform</td><td class="v">{{platform}}</td></tr>
+        <tr><td class="e">Version</td><td class="v">{{platform_version}}</td></tr> 
+        <tr><td class="e">Solution Version</td><td class="v">{{sol_version}}</td></tr>       
+        <tr><td class="e">Environment Notes</td><td class="v">{{notes}} </td></tr>
+        <tr><td class="e">Third Party Solution</td><td class="v">{{third_party_sol}} </td></tr>
+        <tr><td class="e">Third Party HW Support</td><td class="v">{{third_party_sup}} </td></tr>
+        <tr><td class="e">Driver</td><td class="v">{{driver}}</td></tr> 
+        <tr><td class="e">Enterprise LDD Details</td><td class="v">{{lb_details}} </td></tr>
+        <tr><td class="e">Workgroup Details</td><td class="v">{{workgroup}} </td></tr>
+        <tr><td class="e">LDD Database</td><td class="v">{{ldd_db}} </td></tr>
+    </tbody>
+</table>  
+</div>
+
+<div class="pb-3">
+<h5>Support Details</h5>
+<table>
+    <tbody>
+        <tr><td class="e">Primary TSC</td><td class="v">{{tsc}}</td></tr>
+        <tr><td class="e">Support Model</td><td class="v">{{support_model}}</td></tr>
+        <tr><td class="e">Geographic Location</td><td class="v">{{geo}}</td></tr>
+        <tr><td class="e">Region</td><td class="v">{{region}}</td></tr>
+        <tr><td class="e">Support Hours</td><td class="v">{{hours}}</td></tr>
+        <tr><td class="e">SLA Details</td><td class="v">{{sla_details}}</td></tr>
+        <tr><td class="e">Defined Escalation Path</td><td class="v">{{escalation}}</td></tr>
+      </tbody>
+  </table> 
+</div>

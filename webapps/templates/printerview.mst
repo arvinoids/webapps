@@ -1,0 +1,6 @@
+<tr id='{{address}}'>
+    <td class='address'>{{address}}</td>
+    <td class='net'>{{is_online}}</td>
+    <td><a href='https://{{address}}' class='model' target='_BLANK'>{{model}}</a></td>
+    <td class='status'>{{status}}</td>
+</tr>

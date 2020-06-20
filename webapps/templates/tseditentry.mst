@@ -1,0 +1,43 @@
+<div class="container pt-md-5">
+    <section>
+        <div class="container container-fluid px-md-5 center-block">
+            <form action='controllers/update_entry.php' method="POST">
+                <table id="profiles" class='table table-hover table-bordered '>
+                    <thead id="header">
+                        <tr class="header thead-light">
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="label align-middle">ID</td>
+                            <td><input class="form-control" name="id" type="text" value="{{id}}" readonly></td>
+                        </tr>
+                        <tr>
+                            <td class='label align-middle'>Elements</td>
+                            <td class='item'><!--<input class="form-control form-control-sm" name="elements" type="text" value="{{elements}}"></td>-->
+                            <div class="input-group mb-3">
+                                <input type="text" name="elements" id="elements" class="form-control form-control-sm" value="{{elements}}" aria-label="elements" readonly>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary btn-sm" type="button" data-toggle="modal" data-target="#itemselection">Add Items</button>
+                                </div>
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td class='label align-middle'>Step</td>
+                            <td class='item'><input class="form-control form-control-sm" name="step" type="text" value="{{step}}"></td>
+                        </tr>
+                        <tr>
+                            <td class='label align-middle'>Details</td>
+                            <td class='item'><textarea class="form-control form-control-sm" name="details" type="text" rows="10">{{details}}</textarea></td>
+                        </tr>
+                        <tr>
+                            <td class='label align-middle'>Reference</td>
+                            <td class='item'><input class="form-control form-control-sm" name="reference" type="text" value="{{reference}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="submit" class="btn btn-info btn-sm" value="Update">
+            </form>
+        </div>
+    </section>
+</div>

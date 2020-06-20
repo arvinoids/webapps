@@ -1,0 +1,9 @@
+<?php
+define('DB_HOST','localhost');
+define('DB_NAME','webapps');
+define('DB_USER','webapps');
+define('DB_PASS','oacfLEfoWGslwFWl');
+define('CHARSET','utf8mb4');
+define('SERVER','157.184.63.251');
+define('LOGGING','enabled');
+?>

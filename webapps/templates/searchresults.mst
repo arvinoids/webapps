@@ -1,0 +1,9 @@
+<tr id='{{ip}}'>
+    <td class='ip'><a href='ipview.php?ip={{ip}}' target='_BLANK'>{{ip}}</a></td>
+    <td class='account'>{{account}}</td>
+    <td class='project'>{{project}}</td>
+    <td class='solutions'>{{solutions}}</td>
+    <td class='app_owner'>{{app_owner}}</td>
+    <td class='status'>{{status}}</td>
+    <td class='hours'>{{hours}}</td>
+</tr>

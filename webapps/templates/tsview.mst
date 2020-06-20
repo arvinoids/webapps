@@ -1,0 +1,22 @@
+<div class="container pt-md-5">
+    <section>
+        <div class="container container-fluid px-md-5 center-block">
+                <table id="profiles" class='table table-bordered'>
+                    <tbody>
+                        <tr>
+                            <td class='label align-middle'>Topic</td>
+                            <td class='item'>{{step}}</td>
+                        </tr>
+                        <tr>
+                            <td class='label align-middle'>Details</td>
+                            <td class='item'>{{{details}}}</td>
+                        </tr>
+                        <tr>
+                            <td class='label align-middle'>Reference</td>
+                            <td class='item'>{{reference}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </section>
+</div>

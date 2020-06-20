@@ -1,0 +1,9 @@
+<tr>
+    <!--<td class='id'>{{id}}</td>-->
+    <td class='item'>{{step}}</td>
+    <td class='details'>{{details}}</td>
+    <td class='operations text-center'>
+        <a href="controllers/decide.php?mode=delete&id={{id}}" onclick="return confirm('This will delete Entry#{{id}}. Proceed?')">Delete</a> |
+        <a href="tsedit.php?id={{id}}">Edit</a>
+    </td>
+</tr>

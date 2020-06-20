@@ -1,0 +1,6 @@
+<li class="list-group-item">
+<div class="row ml-3">
+    <input class="form-check-input" name="selection" type="checkbox" value="{{id}}" id="{{id}}" {{checked}}>
+    <label class="form-check-label" for="{{id}}">{{step}}</label>
+    <div class="row">
+</li>

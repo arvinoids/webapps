@@ -1,0 +1,9 @@
+<div class="col-sm">
+    <div class="card">
+        <h5 class="card-header">{{step}}</h5>
+        <div class="card-body">
+            <p class="card-text">{{details}}</p>
+            <a href="#" class="btn btn-primary">Select this</a>
+        </div>
+    </div>
+</div>

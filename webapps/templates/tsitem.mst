@@ -1,0 +1,5 @@
+<tr>
+    <td class='item font-weight-bold'>{{step}}</a></td>
+    <td class='details'><a class="nounderline" href='troubleshooter.php?id={{id}}'>{{details}}</a></td>
+    <td class='ref '><a href='tsview.php?id={{id}}' target="_BLANK">View</a></td>
+</tr>

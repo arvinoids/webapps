@@ -1,0 +1,8 @@
+<form action='troubleshooter.php?mode=edit' method="POST">
+    <tr>
+        <!--<td class='id align-middle'><input class="form-control col-md-5 form-control-sm" name="id" type="text" value="{{newid}}" hidden>{{newid}}</td>-->
+        <td class='item'><input class="form-control form-control-sm" name="step" type="text"></td>
+        <td class='details'><input class="form-control form-control-sm" name="details" type="text"></td>
+        <td class='operations'><input type="submit" class="btn btn-primary btn-block btn-sm" value="Add"></td>
+    </tr>
+</form>

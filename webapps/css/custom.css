@@ -1,0 +1,74 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    /*padding-top: 65px; */
+    padding-bottom: 50px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #dddddd;
+    color:  #555555;
+    text-align: center;
+ }
+
+.searchresults {
+     font-size: 85%;
+ }
+
+th.profile {
+     width: 8%;
+ }
+
+th.owner {
+    width: 12%;
+}
+
+th.account {
+    width: 18%;
+}
+
+th.solutions {
+    width: 15%;
+}
+
+th.hours {
+    width: 10%;
+}
+
+h5 {
+    color : rgb(55, 129, 71);
+}
+
+.label {
+    font-weight: bold;
+    background-color: #eeeeee;
+    max-width: 100px;
+}
+
+/*trwizard*/
+td.details {
+    white-space: nowrap; 
+    text-overflow:ellipsis; 
+    overflow: hidden; 
+    max-width:500px;
+}
+
+td.operations {
+    min-width:90px;
+    max-width:90px;
+}
+
+.nounderline {
+    text-decoration: none !important;
+    color: black;
+}
+
+.list-group{
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
