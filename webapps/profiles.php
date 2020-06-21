@@ -84,7 +84,6 @@ require 'controllers/search.php';
     </section>
 
 </div>
-
         <footer class="page-footer font-small">
 
             <!-- Copyright -->

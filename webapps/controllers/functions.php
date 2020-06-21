@@ -85,9 +85,19 @@ function fetchProfile($ip)
     $m = new Mustache_Engine;
     $result = $pdo->query($query);
     $template=file_get_contents('templates/profileview.mst');
-    $data = $result->fetch();
+    $data = $result->fetch(); //after this, insert files count to data
+    $data['files'] = getFilesCount($ip);
     echo $m->render($template,$data);
     unset($pdo);
+}
+
+function getFilesCount($ip)
+{
+    $pdo = dbconnect();
+    $query = "SELECT count(0) FROM ip_files WHERE ip='".$ip."'";
+    $result = $pdo->query($query)->fetchColumn();
+    $ans = ($result=='0') ? 'None' : $result;
+    return $result;
 }
 
 function updateProfile($ip)
@@ -177,4 +187,19 @@ function showStep($id)
     unset($pdo);
 }
 
+//file manager
+function showFiles($ip)
+{
+    $pdo = dbConnect();
+    if (isset($ip)) $query = "SELECT * FROM ip_files WHERE ip='$ip'";
+        else $query = "SELECT * FROM ip_files";
+    $data = $pdo->query($query);
+    $m = new Mustache_Engine;
+    $template = file_get_contents('templates/files.mst');
+    while ($row = $data->fetch())
+    {
+        echo $m->render($template,$row);
+    }
+
+}
 ?>

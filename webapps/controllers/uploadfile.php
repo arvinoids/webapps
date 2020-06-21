@@ -1,0 +1,70 @@
+<?php
+ //   ini_set('display_errors', 'On');
+ //   ini_set('html_errors', 0);
+   require '../config.php';
+   require 'database.php';
+   $currentDirectory = getcwd();
+   $uploadDirectory = "/../uploads/";
+
+   $errors = []; // Store errors here
+
+   $fileExtensionsAllowed = ['jpeg','jpg','png','doc','docx','ppt','pptx','pdf','xml','zip','ucf']; // These will be the only file extensions allowed 
+
+   $fileName = $_FILES['file']['name'];
+   $fileSize = $_FILES['file']['size'];
+   $fileTmpName  = $_FILES['file']['tmp_name'];
+   $fileType = $_FILES['file']['type'];
+   $fileExtension = strtolower(end(explode('.',$fileName)));
+
+   $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Upload Results</title>
+</head>
+<body>
+    <div class="alert alert-warning text-center" role="alert">
+<?php 
+   if (isset($_POST['submit'])) {
+
+     if (! in_array($fileExtension,$fileExtensionsAllowed)) {
+       $errors[] = "This file extension is not allowed. Please upload a document, image or zip file";
+     }
+
+     if ($fileSize > 40000000) {
+       $errors[] = "File exceeds maximum size (40MB)";
+     }
+
+     if (empty($errors)) {
+       $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
+       if ($didUpload) {
+        $pdo = dbConnect();
+        $ip = $_POST['ip'];
+        $desc = $_POST['description'];
+        $path = "uploads/".$fileName;
+        $insert = "INSERT INTO ip_files ( ip,name,description,path ) VALUES ('$ip','$fileName','$desc','$path')";
+        $pdo->query($insert);
+         echo "The file " . basename($fileName) . " has been uploaded.";
+       } else {
+         echo  "An error occurred. Please contact the administrator.";
+       }
+     } else {
+       foreach ($errors as $error) {
+         echo $error . "These are the errors" . "\n";
+       }
+     }
+
+   }
+?>
+    </div>
+</body>
+</html>

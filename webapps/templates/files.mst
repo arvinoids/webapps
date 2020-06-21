@@ -1,0 +1,5 @@
+<tr>
+    <td style = "min-width:10rem">{{name}}</td>
+    <td style = "min-width:15rem">{{description}}</td>
+    <td style = "min-width:5rem"><a href='{{path}}' target='_BLANK'>View</a></td>
+</tr>
