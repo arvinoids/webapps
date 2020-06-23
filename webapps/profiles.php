@@ -72,7 +72,7 @@ require 'controllers/search.php';
                     </thead>
                     <tbody>
                     <?php 
-                    if(isset($_POST['search'])&&!empty(showProfiles($pdo,$_POST['search'])))
+                    if(isset($_POST['search'])&&!empty(showProfiles($_POST['search'])))
                     {
                         showProfiles($pdo,$_POST['search']); 
                     }    

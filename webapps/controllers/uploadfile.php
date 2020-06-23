@@ -5,16 +5,18 @@
    require 'database.php';
    $currentDirectory = getcwd();
    $uploadDirectory = "/../uploads/";
+   $ip = $_POST['ip'];
 
    $errors = []; // Store errors here
 
-   $fileExtensionsAllowed = ['jpeg','jpg','png','doc','docx','ppt','pptx','pdf','xml','zip','ucf']; // These will be the only file extensions allowed 
+   $fileExtensionsAllowed = ['txt','jpeg','jpg','png','doc','docx','ppt','pptx','pdf','xml','zip','ucf']; // These will be the only file extensions allowed 
 
-   $fileName = $_FILES['file']['name'];
+   $fileName = $ip."_".$_FILES['file']['name'];
    $fileSize = $_FILES['file']['size'];
    $fileTmpName  = $_FILES['file']['tmp_name'];
    $fileType = $_FILES['file']['type'];
-   $fileExtension = strtolower(end(explode('.',$fileName)));
+   $tmp = explode('.',$fileName);
+   $fileExtension = strtolower(end($tmp));
 
    $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
 ?>
@@ -48,10 +50,13 @@
 
        if ($didUpload) {
         $pdo = dbConnect();
-        $ip = $_POST['ip'];
         $desc = $_POST['description'];
         $path = "uploads/".$fileName;
+        $findfile = "SELECT name FROM ip_files where name='$fileName'";
+        $entry = $pdo->query($findfile)->fetch();
+        if (empty($entry)) {
         $insert = "INSERT INTO ip_files ( ip,name,description,path ) VALUES ('$ip','$fileName','$desc','$path')";
+        } else $insert = "UPDATE ip_files SET description='$desc', path='$path' WHERE name='$fileName'";
         $pdo->query($insert);
          echo "The file " . basename($fileName) . " has been uploaded.";
        } else {
@@ -64,7 +69,7 @@
      }
 
    }
-?>
+?><a href="../ipview.php?ip=<?php echo $ip?>">Go Back to the IP</a> or <a href="../viewfiles.php?ip=<?php echo $ip?>">View files</a>.
     </div>
 </body>
 </html>

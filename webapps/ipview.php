@@ -55,44 +55,6 @@ require_once 'vendor/autoload.php';
 
 </footer>
 
-<!-- Modal -->
-<div class="modal fade" id="fileUpload" tabindex="-1" role="dialog" aria-labelledby="fileUpload" aria-hidden="true" style="font-size:85%;">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add a file</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form method="post"  action="controllers/uploadfile.php" enctype="multipart/form-data">
-      <div class="modal-body">
-        <!--start of upload form-->
-        <div class="input-group mb-3">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="file" name="file">
-                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-            </div>
-        </div>
-
-        <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
-            </div>
-            <input type="text" class="form-control" name="description">
-            <input type="hidden" name="ip" value="<?php echo $_GET['ip']?>">
-        </div>
-        <!--end of upload form-->        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-        <input class="btn btn-primary btn-sm" type="submit" value="Upload file" name='submit'>
-      </div>
-    </form>
-    </div>
-  </div>
-</div>
-
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

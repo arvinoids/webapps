@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 require 'config.php';
 require 'controllers/functions.php';
 
-function showProfiles($pdo,$search) //just display the table
+function showProfiles($search) //just display the table
 {
     
     $pdo = dbconnect();

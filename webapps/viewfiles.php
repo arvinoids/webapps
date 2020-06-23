@@ -43,14 +43,12 @@ ini_set('html_errors', 0);
 
 <div class="container pt-3 d-flex justify-content-center">
     <section>
-    <div class="px-3 py-3 border rounded">
+    <div class="px-3 pt-3 border rounded">
         <table class="table table-striped">
-            <tbody>
-            <?php showFiles($_GET['ip']); ?>
-            </tbody>
+            <tbody id="allfiles"><?php showFiles($_GET['ip']); ?></tbody>
         </table> 
     </div>
-    <div class="alert alert-warning" id="response"></div>
+    <!--<div class="alert alert-warning" id="response"></div>-->
     </section>
 </div>
 
@@ -73,7 +71,7 @@ ini_set('html_errors', 0);
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="post"  action="controllers/uploadfile.php" enctype="multipart/form-data" id="data">
+      <form method="post"  action="controllers/uploadfile.php" enctype="multipart/form-data">
       <div class="modal-body">
         <!--start of upload form-->
         <div class="input-group mb-3">
@@ -89,12 +87,13 @@ ini_set('html_errors', 0);
             </div>
             <input type="text" class="form-control" name="description">
             <input type="hidden" name="ip" value="<?php echo $_GET['ip']?>">
+            <em class="px-2 py-2">Note: If there is a file on the server with the same filename, it will be replaced.</em>
         </div>
         <!--end of upload form-->        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-        <input id="submitbtn" type="submit" class="btn btn-primary btn-sm" data-dismiss="modal" value="Upload File">
+        <input class="btn btn-primary btn-sm" type="submit" value="Upload file" name='submit'>
       </div>
     </form>
     </div>
@@ -108,8 +107,13 @@ ini_set('html_errors', 0);
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function(){
+  
+if ($('#allfiles').is(':empty')){
+  console.log("no entries");
+  $('#allfiles').html('There are no attachments for this IP.');
+}
 
-    $("#submitbtn").click(function(e){
+/*    $("#submitbtn").click(function(e){
         e.preventDefault();    
         var formData = new FormData(this);
 
@@ -124,7 +128,11 @@ $(document).ready(function(){
             contentType: false,
             processData: false
         });
-    });
+    });*/
+    $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
 });
 
 </script>

@@ -7,8 +7,9 @@
         <tr><td class="e">Status</td><td class="v">{{status}}</td></tr>
         <tr><td class="e">Account</td><td class="v">{{account}}</td></tr>
         <tr><td class="e">Project</td><td class="v">{{project}}</td></tr>
-        <tr><td class="e">Attachments</td><td class="v"><a href="viewfiles.php?ip={{ip}}" target="_BLANK">{{files}}</a>
-         - <a href="#fileUpload" data-toggle="modal" data-target="#fileUpload">Add</a></td></tr>
+        <tr><td class="e">Attachments</td><td class="v">
+            <a href="viewfiles.php?ip={{ip}}" target="_BLANK">{{files}}</a>
+            </td></tr>
   </tbody>
 </table> 
 </div>
@@ -25,8 +26,6 @@
         <tr><td class="e">Local PS</td><td class="v">{{ps}}</td></tr>
         <tr><td class="e">Installer</td><td class="v">{{installer}}</td></tr>
         
-
-
     </tbody>
   </table>  
 </div>
