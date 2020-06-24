@@ -9,8 +9,7 @@
 
    $errors = []; // Store errors here
 
-   $fileExtensionsAllowed = ['txt','jpeg','jpg','png','doc','docx','ppt','pptx','pdf','xml','zip','ucf']; // These will be the only file extensions allowed 
-
+   $fileExtensionsAllowed = ['fls','cfg','txt','jpeg','jpg','png','doc','docx','ppt','pptx','pdf','xml','zip','ucf']; // These will be the only file extensions allowed 
    $fileName = $ip."_".$_FILES['file']['name'];
    $fileSize = $_FILES['file']['size'];
    $fileTmpName  = $_FILES['file']['tmp_name'];
