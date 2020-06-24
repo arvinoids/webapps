@@ -37,11 +37,11 @@
    if (isset($_POST['submit'])) {
 
      if (! in_array($fileExtension,$fileExtensionsAllowed)) {
-       $errors[] = "This file extension is not allowed. Please upload a document, image or zip file";
+       $errors[] = "This file extension is not allowed. Please check with admin for allowed file types.";
      }
 
      if ($fileSize > 40000000) {
-       $errors[] = "File exceeds maximum size (40MB)";
+       $errors[] = "File exceeds maximum size (40MB).";
      }
 
      if (empty($errors)) {
@@ -68,7 +68,7 @@
      }
 
    }
-?><a href="../ipview.php?ip=<?php echo $ip?>">Go Back to the IP</a> or <a href="../viewfiles.php?ip=<?php echo $ip?>">View files</a>.
+?><a href="../ipview.php?ip=<?php echo $ip?>"> Go Back to the IP</a> or <a href="../viewfiles.php?ip=<?php echo $ip?>">View files</a>.
     </div>
 </body>
 </html>
