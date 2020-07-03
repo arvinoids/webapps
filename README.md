@@ -5,4 +5,4 @@ It includes an app for:
    - checking LDD/LPM server status
    - browsing installation profiles of customers.
  
- All information here are not for internal use only.
+ All information here are for internal use only.
